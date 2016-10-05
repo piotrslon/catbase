@@ -16,15 +16,16 @@ public class Interface  {
 		String name = getUserInput();
 		System.out.println("Give cat guardians name");
 		String guardianName = getUserInput();
+		System.out.println("Ty");
 		
 		cat.setName(name);
 		cat.setGuardianName(guardianName);
 		
-		
+			
 	}
 
 	public static String getUserInput() {
-		return sc.nextLine();
+		return sc.nextLine().trim();
 	}
 	
 
