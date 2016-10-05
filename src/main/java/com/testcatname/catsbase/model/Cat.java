@@ -1,19 +1,16 @@
 package com.testcatname.catsbase.model;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Cat {
 	
 	private String name;
-	private Date today;
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-	//System.out.println(sdf.format(date))
-	private double weight;
+	private Date birthDate;
+	private Float weight;
 	private String guardianName;
 	
 	public String tellYourName(){
-		return "This cat names" +name+ "he born in" +(sdf.format(today))+"his weight is"+weight+"and his guargian name is"+guardianName;
+		return "\nThis cat names: " +name+ "\nhe born in: " +birthDate+"\nhis weight is: "+weight+"\nand his guargian name is: "+guardianName;
 	}
 	
 	public String getName() {
@@ -24,19 +21,19 @@ public class Cat {
 		this.name = name;
 	}
 
-	public Date getToday() {
-		return today;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setToday(Date today) {
-		this.today = today;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
-	public double getWeight() {
+	public Float getWeight() {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(Float weight) {
 		this.weight = weight;
 	}
 
