@@ -9,10 +9,6 @@ public class Cat {
 	private Float weight;
 	private String guardianName;
 	
-	public String tellYourName(){
-		return "\nThis cat names: " +name+ "\nhe born in: " +birthDate+"\nhis weight is: "+weight+"\nand his guargian name is: "+guardianName;
-	}
-	
 	public String getName() {
 		return name;
 	}

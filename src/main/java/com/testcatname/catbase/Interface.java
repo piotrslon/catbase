@@ -100,11 +100,11 @@ public class Interface  {
 				System.out.println(i+1+" - "+cats.get(i).getName());
 			}
 			
+			//show cat
 			do {
 				try {
 					catsIndex = Integer.valueOf(getUserInput())-1;
-					//show cat
-					System.out.println(cats.get(catsIndex).tellYourName());
+					System.out.println(catDAO.tellYourName(catsIndex));
 					continue;
 				} catch (NumberFormatException nfe) {
 					System.out.println("Only numbers");
