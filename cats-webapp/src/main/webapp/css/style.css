@@ -1,0 +1,51 @@
+body {
+    line-height: 1;
+}
+
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+.clear {
+    clear: both;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* LAYOUT GLOBAL */
+body {
+    font-family: 'Didact Gothic', sans-serif;
+
+    color: #404040;
+    background: #c0c0c0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
