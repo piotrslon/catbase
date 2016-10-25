@@ -3,13 +3,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+    	<script src="js/cats.js"></script>
         <title>Show Cats</title>
     </head>
     <style>
 		table {
 		    font-family: arial, sans-serif;
 		    border-collapse: collapse;
-		    width: 100%;
+		    width: 300px;
+		    border="1";
 		}
 		
 		td, th {
@@ -25,17 +27,26 @@
     <body>
         <p>Show Cats</p>
 	    <br>
-		<table border="1" style="width: 300px">
+		<table>
 			<tr>
+				<th>#</th>
 				<th>Cats name</th>
-				<th>Details</th>
 			</tr>
 			<tr>
-				<td>Name:</td>
+				<td>0</td>
 				<td>${name}</td>
 			</tr>
 		</table>
-		
-		<button type="button"><a href="/cats-webapp/" class="cancel">Back!</a></button>
+
+		<table>
+			<c:forEach items="${cats}" var="cat" varStatus="loop">
+				<tr>
+					<td class="index"><a href="/cats-webapp/cats/show/${loop.index}">${loop.index}</a></td>
+					<td><c:out value="${cat.name}" /></td>
+				</tr>
+			</c:forEach>
+		</table>
+
+	<button type="button"><a href="/cats-webapp/" class="cancel">Back!</a></button>
 	</body>
 </html>

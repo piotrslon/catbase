@@ -1,5 +1,6 @@
 package com.testcatname.catbase.controllers;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,11 @@ public class CatsController {
 	private CatDAO catDao;
 	
 	@RequestMapping("/")
-	public String start (Model model) {
+	public String start (Model model) throws ParseException {
+		
+		catDao.initCats();
+		
+		//model.addAttribute("name", catDao.getCats().get(0).getName());
 		
 		return "start";
 	}
@@ -40,26 +45,30 @@ public class CatsController {
 	}
 	
 	@RequestMapping("/cats/show")
-	public String showCats (Model model) {
+	public String showCats (Model model) throws ParseException {
 		
+		if (catDao.getCats().size() <1) catDao.initCats();
 		String empty = "Catbase is empty";
 		List<Cat> catList = null;
 		
 		if (catDao.getCats().size() != 0) {
 			catList = catDao.getCats();
-			model.addAttribute("name", catList);
+			model.addAttribute("cats", catList);
+			model.addAttribute("name", catList.get(0).getName());
 		}
-		model.addAttribute("name", empty);
+		else model.addAttribute("cats", empty);
 		
 		return "/cats/show";
 	}
 	
-	@RequestMapping("/cats/{name}")
-    public String catsName(@PathVariable("name") String catName) {
+	@RequestMapping("/cats/show/{id}")
+    public String catDetails(@PathVariable("id") Integer id, Model model) {
         
-		catDao.getCats().get(0).setName(catName);
+		Cat cat = catDao.getCats().get(id);
+		model.addAttribute("cat", cat);
 		
-		return "start";
+		
+		return "/cats/show";
     }
 	
 }
