@@ -15,6 +15,36 @@
 		    <artifactId>servlet-api</artifactId>
 		    <version>2.5</version>
 		</dependency>
+		<!--WebJars -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>2.2.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>3.3.5</version>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>org.webjars</groupId>
+		            <artifactId>jquery</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>9.4.1208.jre7</version>
+		</dependency>
+		<!-- Servlet -->
+	    <dependency>
+	        <groupId>javax.servlet.jsp</groupId>
+	        <artifactId>jsp-api</artifactId>
+	        <version>2.1</version>
+	        <scope>provided</scope>
+	    </dependency>
 		<dependency>
 			<groupId>com.testcatname</groupId>
 			<artifactId>cats-application</artifactId>
@@ -48,6 +78,12 @@
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>
 		    <version>1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.2.4.Final</version>
 		</dependency>
 	</dependencies>
 	
