@@ -28,25 +28,21 @@
         <p>Show Cats</p>
 	    <br>
 		<table>
-			<tr>
-				<th>#</th>
-				<th>Cats name</th>
-			</tr>
-			<tr>
-				<td>0</td>
-				<td>${name}</td>
-			</tr>
-		</table>
-
-		<table>
-			<c:forEach items="${cats}" var="cat" varStatus="loop">
+			<tbody>
 				<tr>
-					<td class="index"><a href="/cats-webapp/cats/show/${loop.index}">${loop.index}</a></td>
-					<td><c:out value="${cat.name}" /></td>
+					<th>#</th>
+					<th>Cats name</th>
 				</tr>
-			</c:forEach>
+				<c:forEach items="${cats}" var="cat" varStatus="loop">
+					<tr>
+						<td>${loop.index}</td>
+						<td><a href="/cats-webapp/cats/show/${loop.index}"><c:out value="${cat.name}" /></a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
 		</table>
 
-	<button type="button"><a href="/cats-webapp/" class="cancel">Back!</a></button>
+	<a href="/cats-webapp/" class="cancel"><input type="button" value="Back!"></a>
+	<p>-${catName}-<br>-${catWeight}-<br>-${catGName}-</p>
 	</body>
 </html>

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,8 +25,9 @@
 	</style>
     <body>
         <p>AddCats</p>
+        <p>Request Method -${pageContext.request.method}-</p>
 	    <br>
-	    <form method="POST">
+	    <form:form method="POST" modelAttribute="formDto">
 			<table border="1" style="width: 300px">
 				<tr>
 					<th>Qewstions</th>
@@ -31,22 +35,33 @@
 				</tr>
 				<tr>
 					<td>Name:</td>
-					<td><input type="text" name="name"/></td>
+					<td><form:input type="text" path="name"></form:input>
+						<form:errors path="name" cssClass="error" /></td>
+					<%-- <td><form:input type="text" path="name" />
+						<c:if test="${pageContext.request.method=='POST'}">
+						<form:errors path="name" cssClass="error" /></c:if></td> --%>
 				</tr>
 				<tr>
 					<td>Born date:</td>
-					<td><input type="text" name="birthDate"/></td>
+					<td><form:input type="text" path="birthDate"></form:input>
+						<form:errors path="birthDate" cssClass="error" /></td>
 				<tr>
 					<td>Weight:</td>
-					<td><input type="text" name="weight"/></td>
+					<td><form:input type="text" path="weight"></form:input>
+						<form:errors path="weight" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td>Guardian name:</td>
-					<td><input type="text" name="guardianName"/></td>
+					<td><form:input type="text" path="guardianName"></form:input>
+						<form:errors path="guardianName" cssClass="error" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;padding: 5px"><input type="submit" value="Send form" /></td>
 				</tr>
 			</table>
-		</form>
+		</form:form>
 		
-		<button type="button"><a href="/cats-webapp/" class="cancel">Back!</a></button>
+		
+		<a href="/cats-webapp/" class="cancel"><input type="button" value="Back!"></a>
 	</body>
 </html>
