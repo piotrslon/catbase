@@ -1,4 +1,4 @@
-package com.testcatname.catbase.DAO;
+package com.testcatname.catbase.dao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

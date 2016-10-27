@@ -7,6 +7,24 @@
 		<link rel="stylesheet" href="/css/style.css" />
         <title>Add Cat</title>
     </head>
+    <style>
+	    table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 300px;
+		border="1";
+		}
+				
+		td, th {
+		    border: 1px solid #dddddd;
+		    text-align: left;
+			width: 150px;
+		}
+		
+		tr:nth-child(even) {
+		    background-color: #dddddd;
+		}
+	</style>
     <body>
         <p>AddCats</p>
         <p>Request Method -${pageContext.request.method}-</p>

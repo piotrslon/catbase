@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import com.testcatname.catbase.DAO.CatDAO;
+import com.testcatname.catbase.dao.CatDAO;
 import com.testcatname.catsbase.model.Cat;
 
 public class Interface  {

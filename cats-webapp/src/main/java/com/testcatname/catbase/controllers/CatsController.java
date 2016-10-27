@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.testcatname.catbase.DAO.CatDAO;
+import com.testcatname.catbase.dao.CatDAO;
 import com.testcatname.catbase.dto.FormDTO;
 import com.testcatname.catsbase.model.Cat;
 
@@ -90,9 +90,11 @@ public class CatsController {
 		//public String widok(@RequestParam("a") String danaA, @RequestParam(value = "b", required = false, defaultValue = "0") Integer danaB)
 		
 		String catName = request.getParameter("catName");
-		if (catName == null) catName = "catName";
+		if (catName == null) catName = "";
 	    String catWeight = request.getParameter("catWeight");
 	    if (catWeight == null) catWeight = "catWeight";
+	    String catBDate = request.getParameter("catBDate");
+		if (catBDate == null) catBDate = "catBDate";
 	    String catGName = request.getParameter("catGName");
 		if (catGName == null) catGName = "catGName";
 
@@ -110,6 +112,7 @@ public class CatsController {
 		
 		model.addAttribute("catName", catName);
 		model.addAttribute("catWeight", catWeight);
+		model.addAttribute("catBDate", catBDate);
 		model.addAttribute("catGName", catGName);
 		
 		return "/cats/show";
@@ -122,6 +125,7 @@ public class CatsController {
 		
 		model.addAttribute("catName", cat.getName());
 		model.addAttribute("catWeight", cat.getWeight());
+		model.addAttribute("catBDate", cat.getBirthDate());
 		model.addAttribute("catGName", cat.getGuardianName());
 		
 		return "redirect:/cats/show";
