@@ -3,27 +3,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<script src="js/cats.js"></script>
+    	<link rel="stylesheet" href="static/css/style.css" />
         <title>Show Cats</title>
     </head>
-    <style>
-		table {
-		    font-family: arial, sans-serif;
-		    border-collapse: collapse;
-		    width: 300px;
-		    border="1";
-		}
-		
-		td, th {
-		    border: 1px solid #dddddd;
-		    text-align: left;
-		    width: 150px;
-		}
-		
-		tr:nth-child(even) {
-		    background-color: #dddddd;
-		}
-	</style>
     <body>
         <p>Show Cats</p>
 	    <br>

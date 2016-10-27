@@ -4,31 +4,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+		<link rel="stylesheet" href="/css/style.css" />
         <title>Add Cat</title>
     </head>
-    <style>
-		table {
-		    font-family: arial, sans-serif;
-		    border-collapse: collapse;
-		    width: 100%;
-		}
-		
-		td, th {
-		    border: 1px solid #dddddd;
-		    text-align: left;
-		    width: 100%;
-		}
-		
-		tr:nth-child(even) {
-		    background-color: #dddddd;
-		}
-	</style>
     <body>
         <p>AddCats</p>
         <p>Request Method -${pageContext.request.method}-</p>
 	    <br>
 	    <form:form method="POST" modelAttribute="formDto">
-			<table border="1" style="width: 300px">
+			<table>
 				<tr>
 					<th>Qewstions</th>
 					<th>Answer</th>

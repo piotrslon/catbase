@@ -26,10 +26,11 @@ public class CatsController {
 	@Autowired
 	private CatDAO catDao;
 	
-	@RequestMapping("/")
+	@RequestMapping("")
 	public String start (Model model) throws ParseException {
 		
-		//model.addAttribute("name", catDao.getCats().get(0).getName());
+		if (catDao.getCats().size() > 2)
+			model.addAttribute("name", catDao.getCats().get(2).getName());
 		
 		return "start";
 	}
@@ -96,7 +97,7 @@ public class CatsController {
 		if (catGName == null) catGName = "catGName";
 
 		
-		if (catDao.getCats().size() <1) catDao.initCats();
+		if (catDao.getCats().size() <2) catDao.initCats();
 		String empty = "Catbase is empty";
 		List<Cat> catList = null;
 		
